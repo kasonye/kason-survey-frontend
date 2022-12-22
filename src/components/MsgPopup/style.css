@@ -1,0 +1,39 @@
+.modal-back {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 15;
+    padding: 20px;
+  }
+  
+  .modal-dialog {
+    width: 640px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px 35px;
+    box-shadow: 0px 0px 5px 0px #999;
+  }
+  
+  .modal-action {
+    text-align: center;
+  }
+  
+  .modal-button {
+    width: 200px;
+    font-size: 18px;
+    padding: 5px;
+  }
+  
+  .msg-title {
+    font-size: 20px;
+      font-weight: bold;
+  }
+  
+  .msg-message {
+    margin: 10px 0;
+  }

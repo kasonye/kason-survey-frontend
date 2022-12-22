@@ -1,0 +1,14 @@
+
+   {
+    "questionTitle": "Which city do you like best?",
+    "options": [
+        {
+            "value": "Hangzhou",
+            "sequence": "1"
+        },
+        {
+            "value": "foshan",
+            "sequence": "2"
+        }
+    ]
+}

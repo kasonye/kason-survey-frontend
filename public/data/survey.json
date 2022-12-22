@@ -1,0 +1,60 @@
+[
+    {
+        "questionId": 1,
+        "questionTitle": "Which city do you like best?",
+        "sequence": 1,
+        "enabled": 1,
+        "options": [
+            {
+                "optionId": 1,
+                "optionContent": "Hangzhou",
+                "questionId": 1,
+                "sequence": 1
+            },
+            {
+                "optionId": 2,
+                "optionContent": "Foshan",
+                "questionId": 1,
+                "sequence": 2
+            }
+        ]
+    },{
+        "questionId": 2,
+        "questionTitle": "How many people are there in your company?",
+        "sequence": 1,
+        "enabled": 1,
+        "options": [
+            {
+                "optionId": 3,
+                "optionContent": "10",
+                "questionId": 2,
+                "sequence": 1
+            },
+            {
+                "optionId": 4,
+                "optionContent": "20",
+                "questionId": 2,
+                "sequence": 2
+            }
+        ]
+    },{
+        "questionId": 3,
+        "questionTitle": "Who are you?",
+        "sequence": 1,
+        "enabled": 1,
+        "options": [
+            {
+                "optionId": 5,
+                "optionContent": "amy",
+                "questionId": 3,
+                "sequence": 1
+            },
+            {
+                "optionId": 6,
+                "optionContent": "candy",
+                "questionId": 3,
+                "sequence": 2
+            }
+        ]
+    }
+]
