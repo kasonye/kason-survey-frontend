@@ -1,6 +1,4 @@
-import axios from 'axios'
 import request from '../config/request';
-import useQuestionStore from '../stores/useQuestionStore';
 
 
 export const getQuestion = async () => {
@@ -9,4 +7,18 @@ export const getQuestion = async () => {
         data = res.data
     })
     return data;
+}
+
+export const modifyLocation = async (question) => {
+    const code = await request.put("survey-api/questions", question).then((res) => {
+        return res.code;
+    })
+    return code;
+}
+
+export const enabledQuestion = async (question) => {
+    const code = await request.put("survey-api/questions/enabled", question).then((res) => {
+        return res.code;
+    })
+    return code;
 }

@@ -28,8 +28,5 @@ function MainRouter() {
   )
 }
 
-const Home = () => {
-  return <div>hello world</div>
-}
 
 export default MainRouter;

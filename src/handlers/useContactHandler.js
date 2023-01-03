@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import useContactStore from "../stores/useContactStore";
 import useMsgPopupStore from "../stores/useMsgPopupStore";
 import useSurveyStore from "../stores/useSurveyStore";
+import * as contactSvc from '../services/ContactSVC'
 
 export default function useContactHandler() {
     const surveyStore = useSurveyStore();
@@ -11,28 +12,28 @@ export default function useContactHandler() {
     const result = {};
 
     result.submit = () => {
-        store.user.surveyList = surveyStore.surveyList
+        store.contact.surveyList = surveyStore.surveyList
         console.log(store)
         if (!validate()) return;
     }
 
 
     const validate = e => {
-        if (store.user.name === "") {
+        if (store.contact.userName === "") {
             showMsg('Error', 'Please input name.')
             return false;
         }
-        if (store.user.email === "") {
+        if (store.contact.userEmail === "") {
             showMsg('Error', 'Please input email.')
             return false;
         }
-        if (store.user.phone === "") {
+        if (store.contact.userPhone === "") {
             showMsg('Error', 'Please input phone.')
             return false;
         }
-        const nameValue = store.user.name
-        const phoneValue = store.user.phone
-        const emailValue = store.user.email
+        const nameValue = store.contact.userName
+        const phoneValue = store.contact.userPhone
+        const emailValue = store.contact.userEmail
         var specialKey = "[`~!#$^&*()=|{}':;',\\[\\].<>/?~！#￥……&*（）——|{}【】‘；：”“'。，、？]‘'";
         var emailPat = /^(.+)@(.+)$/;
         var phonePat =  /^(2[1-9]|3[145679])\d{6}$/;
@@ -61,6 +62,7 @@ export default function useContactHandler() {
             showMsg('Error', 'Please input a valid phone number.')
             return false;
         }
+        contactSvc.savaRecord(store.contact);
         navigate("/finish")
 
     }

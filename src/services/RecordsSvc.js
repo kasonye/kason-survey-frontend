@@ -1,6 +1,10 @@
 import axios from "axios";
+import request from '../config/request';
 
 export const getRecords = async () =>{
-    const {data} = await axios.get('/data/records.json');
+    var data = []
+    await request.get("survey-api/records").then((res) => {
+        data = res.data
+    })
     return data;
 }

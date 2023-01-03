@@ -1,10 +1,10 @@
 import create from "zustand"
 
 const useContactStore = create((set, get) => ({
-    user:{
-        name: '',
-        email: '',
-        phone: '',
+    contact:{
+        userName: '',
+        userEmail: '',
+        userPhone: '',
         surveyList:[]
     },
     // setter

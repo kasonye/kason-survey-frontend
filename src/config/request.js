@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const request = axios.create({
     baseURL: `http://localhost:8080`,
@@ -12,6 +13,10 @@ request.interceptors.request.use(config => {
     config.headers['Content-Type'] = 'application/json;charset=utf-8';
 
     // config.headers['token'] = user.token;  // 设置请求头
+    let admin = sessionStorage.getItem("token") ? (sessionStorage.getItem("token")) : null
+    if (admin) {
+        config.headers['token'] = admin  // 设置请求头
+    }
     return config
 }, error => {
     return Promise.reject(error)
@@ -22,6 +27,13 @@ request.interceptors.request.use(config => {
 request.interceptors.response.use(
     response => {
         let res = response.data;
+        console.log(res)
+        
+        if(res.code==1401||res===""){
+            window.location.href = window.location.origin+"/login"
+        }
+        
+        
         // 如果是返回的文件
         if (response.config.responseType === 'blob') {
             return res

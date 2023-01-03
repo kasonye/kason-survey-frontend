@@ -22,7 +22,8 @@ export default function useSurveyHandler(){
     const validate = e => {
         
         for(var i=0;i<store.surveyList.length;i++){
-            if(store.surveyList[i].value===undefined){
+            console.log(store.surveyList[i].value)
+            if(store.surveyList[i].value===null){
                 showMsg('Error', 'Please input survey.')
                 return false;
             }

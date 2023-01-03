@@ -4,6 +4,7 @@
     width: 80%;
     height: 100%;
     margin: 3% 0 0 10%;
+    border-radius: 10px;
 }
 .questionDetail:nth-last-child(1){
     margin-bottom: 3%;

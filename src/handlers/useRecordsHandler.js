@@ -9,6 +9,7 @@ export default function useRecordsHandler(){
     result.requestRecordsList = async ()=>{
         const recordsList = await recordsSvc.getRecords();
         store.setValue({recordsList})
+        console.log(recordsList)
     }
     return result;
 }
